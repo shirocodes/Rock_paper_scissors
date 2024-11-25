@@ -3,10 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
-    <script src="script.js"></script>
+    <title>Game: Rock-Paper-Scissors-Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 10px;
+            padding: 20px;
+        }
+        h1 {
+            color: #095f0d;
+            margin-top: 45px;
+        }
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+        .instructions {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: inline-block;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #e91e63;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Up for a challenge! Engage the Rock-Paper-Scissors Game!</h1>
+    <div class="instructions">
+        <p>Follow these steps to start playing:</p>
+        <ol>
+            <li>Open the browser console by pressing <span class="highlight">F12</span> OR rightclick and select <span class="highlight">inspect</span>on your keyboard.</li>
+            <li>Move to the console, type <span class="highlight">playGame();</span> and press Enter to start a new game.</li>
+            <li>When prompted, input your choice of <span class="highlight">rock</span>, <span class="highlight">paper</span>, or <span class="highlight">scissors</span> in the pop-up dialog.</li>
+        </ol>
+        <p>See if you can beat me! ENJOY!</p>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
