@@ -31,7 +31,6 @@ let computerscore = 0;
 
 //step V: Creating a logic to play single round
 function playRound (humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase;
     let result;
     if (humanChoice === computerChoice) {
         result = `It's a tie. Both players chose ${humanChoice}.`;
@@ -63,8 +62,9 @@ function playGame () {
     let humanscore = 0;
     let computerscore = 0;
     
+    //ensuring that the playRound and score variables are declared in playGame.
     function playRound (humanChoice, computerChoice) {
-        humanChoice =humanChoice.toLowerCase;
+    
         let result; 
 
         if (humanChoice === computerChoice) {
