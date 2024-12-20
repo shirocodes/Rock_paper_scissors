@@ -5,14 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game: Rock-Paper-Scissors-Game</title>
     <style>
+        .container {
+            border: 2px solid green;
+            display: flex;
+            flex-direction: column;
+            min-width: 150px;
+            min-height: 200px;
+            padding: 10px;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
     <h1>Up for a challenge! Engage the Rock-Paper-Scissors Game!</h1>
-    <div class="instructions">
-        <h2>Follow these steps to start playing:</h2>
-
+    <div class="container"> 
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
     </div>
+    
+
+    <div id="results"></div>
+    <div id="score"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
