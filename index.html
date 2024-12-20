@@ -8,11 +8,25 @@
         .container {
             border: 2px solid green;
             display: flex;
-            flex-direction: column;
-            min-width: 150px;
-            min-height: 200px;
+            min-width: 100px;
+            min-height: 70px;
             padding: 10px;
             align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .displays {
+            display: flex;
+            flex-direction: column;
+            height: 50px;
+            font-weight: bolder;
+            width: 110px;
+            align-items: center;
+            padding: 10px;
+            margin-left: 350px;
+            border: 1px solid;
+            background-color: rgb(73, 94, 73);
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -23,11 +37,10 @@
         <button id="paper">Paper</button>
         <button id="scissors">Scissors</button>
     </div>
-    
-
-    <div id="results"></div>
-    <div id="score"></div>
-
+    <div class="displays">
+        <div id="results"></div>
+        <div id="score"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

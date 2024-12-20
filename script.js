@@ -7,17 +7,6 @@ function getComputerChoice() {
 }
 getComputerChoice();
 
-//logic to get the human choice
-function getHumanChoice () {
-    let humanChoice = prompt ("Please enter your choice: rock, paper, or scissors").toLowerCase();
-    if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
-        return humanChoice;
-    } else {
-        return null;
-    }
-}
-getHumanChoice();
-
 //Declaring players' score variables
 let humanScore = 0;
 let computerScore = 0;
@@ -39,13 +28,32 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
     }  
 
-    console.log(result);
-    console.log(`human score: ${humanScore}, computer score: ${computerScore} `);
+    updateScore();
+    checkWinner();
+    showResult();
 } 
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-playRound(humanSelection, computerSelection);
+//function to check score
+function updateScore() { 
+    document.getElementById('score').textContent = `Human: ${humanScore}, Computer: ${computerScore}`; }
+
+//function to check winner
+function checkWinner() {
+    if (humanScore === 5){
+        document.getElementById('results').textContent = "Congratulations! You are the ultimate winner!";
+        resetGame();
+    } else if (computerScore === 5) {
+        document.getElementById('results').textContent = "Sorry, the computer is the ultimate winner!";
+        resetGame();
+    }
+    
+}
+
+//function to display results in the DOM
+function showResult(result) {
+    document.getElementById('results').textContent = result;
+}
+
 
 //logic to play the entire game
 function playGame() {
@@ -59,18 +67,29 @@ function playGame() {
             console.log("invalid choice: Round skipped.");
         }
     }
-
     if (humanScore > computerScore) {
         console.log("Overall winner: human!");
     } else if (humanScore < computerScore) {
         console.log("Overall winner: Computer!");
     } else {
         console.log("It is a tie!");
-    }
-    
+    }  
 }
 
-playGame();
+//function to reset game
+function resetGame() {
+    humanScore = 0;
+    computerScore = 0;
+    updateScore();
+}
+
+//add event listeners to buttons
+
+document.getElementById('rock').addEventListener('click', () => playRound('rock', getComputerChoice())); 
+document.getElementById('paper').addEventListener('click', () => playRound('paper', getComputerChoice())); 
+document.getElementById('scissors').addEventListener('click', () => playRound('scissors', getComputerChoice()));
+
+updateScore();
 
 
 
